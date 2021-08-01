@@ -3,14 +3,12 @@ services:
   server:
     build: .
     entrypoint:
-      - nodemon
+      - node
       - server.js
     tty: true
     stdin_open: true
     ports:
       - '50051:50051'
-    volumes:
-      - .:/code
     depends_on:
       - postgres
   postgres:
@@ -21,6 +19,3 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
-
-volumes:
-  db-data:
