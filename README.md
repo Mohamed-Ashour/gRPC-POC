@@ -5,9 +5,10 @@ This is a proof of concept of gRPC, a simple client send a request to a simple s
 ## Getting started
 rename `.env-example` to `.env`
 ### run the server
-`docker-compose up`
+`docker-compose up -d`
 ### db migration (first run only)
 `docker exec -it grpc-poc_server_1 sh -c "prisma migrate dev"`
 ### run the client
 `npm install`
+
 `node client`
